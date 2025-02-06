@@ -21,4 +21,23 @@ export class ProductService extends ProductRepository{
         })
     );
   }
+
+  addProduct(product: Product): Observable<void> {
+    return this.http.post<void>(this.apiUrl, product);
+  }
+
+  deleteProduct(id: number): Observable<void>{
+    const url = `${this.apiUrl}${id}`;
+    return this.http.delete<void>(url);
+  }
+
+  updateProduct(id: number, product: Product): Observable<void>{
+    const url = `${this.apiUrl}${id}`;
+    return this.http.put<void>(url, product);
+  }
+
+  getProductById(id: number): Observable<Product>{
+    const url = `${this.apiUrl}${id}`;
+    return this.http.get<Product>(url);
+  }
 }
