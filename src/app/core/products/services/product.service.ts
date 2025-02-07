@@ -14,13 +14,13 @@ export class ProductService extends ProductRepository{
     super();
   }
 
-  getProducts(): Observable<Product[]>{
-    return this.http.get<{product: Product[]}>(this.apiUrl).pipe(
-        map(response => {
-          return response.product //extrae el array de productos
-        })
+  getProducts(): Observable<Product[]> {
+    return this.http.get<{ products: Product[] }>(this.apiUrl).pipe(
+      map(response => response.products) 
     );
   }
+
+
 
   addProduct(product: Product): Observable<void> {
     return this.http.post<void>(this.apiUrl, product);

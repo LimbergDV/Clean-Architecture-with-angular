@@ -7,10 +7,10 @@ import { Product } from "../models/product.model";
   providedIn: 'root'
 })
 
-export class GetProductsUseCase {
+export class AddProductUseCase {
   constructor(private productService: ProductService) {}
 
-  run(): Observable<Product[]> {
-    return this.productService.getProducts()
+  run(product: Product): Observable<void> {
+    return this.productService.addProduct(product)
   }
 }

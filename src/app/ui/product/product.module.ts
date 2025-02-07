@@ -5,11 +5,12 @@ import { ProductsListTableComponent } from './products-list-table/products-list-
 
 
 @NgModule({
-  declarations: [
-    ProductsListTableComponent
-  ],
+  declarations: [ProductsListTableComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ProductsListTableComponent
   ]
 })
-export class ComponentsModule { }
+export class ProductModule { }
