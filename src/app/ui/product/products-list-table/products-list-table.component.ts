@@ -31,4 +31,11 @@ export class ProductsListTableComponent implements OnInit{
       }
     );
   }
+
+  selectProduct(product: Product) {
+    console.log("Se hizo click en el botón");
+    this.selectedProduct = {...product};
+    console.log("Cliente seleccionado", this.selectedProduct);
+  }
+
 }
