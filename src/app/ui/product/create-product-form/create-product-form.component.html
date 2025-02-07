@@ -1,6 +1,6 @@
 <div class="container-form-customers">
   <div class="container">
-    <h2>Formulario de Registro</h2>
+    <h2 class="h2">Formulario de Registro</h2>
     <form (ngSubmit)="onSubmit()">
       <label class="label" for="">Nombre:</label>
     <div class="control">
@@ -11,8 +11,9 @@
     <div class="control">
       <input class="input" type="number" name="price" [(ngModel)]="product.price" placeholder="Escribe el precio del producto" required>
     </div>
-
-      <button type="submit" class="btn btn-primary" [disabled]="!product.name || !product.price">Registrar</button>
+    <br>
+      <button type="submit" class="button is-primary btn-primary" [disabled]="!product.name || !product.price">Registrar</button>
     </form>
   </div>
 </div>
+<br> <br>

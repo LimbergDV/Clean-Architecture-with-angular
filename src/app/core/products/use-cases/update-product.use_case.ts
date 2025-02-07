@@ -7,7 +7,7 @@ import { Product } from "../models/product.model";
   providedIn: 'root'
 })
 
-export class UpdateUserCase {
+export class UpdateProductUseCase {
   constructor(private productService: ProductService) {}
 
   run(id: number, product: Product): Observable<void> {

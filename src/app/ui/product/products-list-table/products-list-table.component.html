@@ -4,7 +4,8 @@
     <tr>
       <th>ID</th>
       <th>Nombre</th>
-      <th>Price</th>
+      <th>Precio</th>
+      <th>Acciones</th>
       <th></th>
     </tr>
   </thead>
@@ -14,24 +15,20 @@
       <td>{{ product.name}}</td>
       <td>{{product.price }}</td>
       <td>
-        <button class="button btn-update" (click)="selectProduct(product)">Actualizar</button>
-        <!-- <td>
-        <button class="button btn-delete" (click)="eliminarCliente(customer.id_customer)">Eliminar</button>
+        <button class="button is-link" (click)="selectProduct(product)">Actualizar</button>
+        <td>
+        <button class="button is-danger" (click)="deleteProduct(product.id)">Eliminar</button>
       </td>
     </tr>
   </tbody>
 </table>
 
-<div *ngIf="selectedCustomer">
+<div *ngIf="selectedProduct">
   <h3 class="text-edit-customer">Actualizar Cliente</h3>
-  <form (ngSubmit)="actualizarCliente()">
-    <input class="input" [(ngModel)]="selectedCustomer.name" name="name" placeholder="Nombre" required />
-    <input class="input" [(ngModel)]="selectedCustomer.last_names" name="last_names" placeholder="Apellidos" required />
-    <input class="input" [(ngModel)]="selectedCustomer.phone_number" name="phone_number" placeholder="Teléfono" required />
-    <input class="input" [(ngModel)]="selectedCustomer.CURP" name="CURP" placeholder="CURP" required />
-    <input class="input" [(ngModel)]="selectedCustomer.number_license" name="number_license" placeholder="Número de Licencia" required />
-    <input class="input" [(ngModel)]="selectedCustomer.birthdate" name="birthdate" placeholder="Fecha de Nacimiento" required />
+  <form (ngSubmit)="updateProduct()">
+    <input class="input" [(ngModel)]="selectedProduct.name" name="name" placeholder="Nombre" required />
+    <input class="input" [(ngModel)]="selectedProduct.price" name="price" placeholder="Price" required />
     <button class="button accept-changes-customer" type="submit">Guardar Cambios</button>
-    <button class="button cancel-changes-customer" type="button" (click)="selectedCustomer = null; selectedCustomer = null">Cancelar</button>
+    <button class="button cancel-changes-customer" type="button" (click)="selectedProduct = null; selectedProduct = null">Cancelar</button>
   </form>
-</div> -->
+</div>
